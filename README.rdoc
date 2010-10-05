@@ -1,0 +1,15 @@
+== Rails 3 example of jQuery UJS
+
+This application is a very simple example of usage unobtrusive javascript (jquery)
+within Rails 3. 
+
+Want to run it? It's simple:
+
+  git clone git@github.com:nu7hatch/rails3-ujs-example.git
+  cd rails3-ujs-example
+  rake db:migrate
+  rails server
+  
+And then go to <tt>http://localhost:3000/users</tt>.
+
+Enjoy!
