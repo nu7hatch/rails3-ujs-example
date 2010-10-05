@@ -1,0 +1,7 @@
+<% if params[:more] %>
+  $("#user_<%= @user.id %>")
+    .replaceWith("<%= escape_javascript(render(:partial => 'user_more', :locals => { :user => @user })) %>")
+<% else %>
+  $("#user_<%= @user.id %>")
+    .replaceWith("<%= escape_javascript(render(:partial => 'user', :locals => { :user => @user })) %>")
+<% end %>

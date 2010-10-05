@@ -1,0 +1,13 @@
+<%- if @user.valid? %> 
+  $("#users")
+    .prepend("<%= escape_javascript(render(:partial => 'user', :locals => { :user => @user })) %>")
+  $(':input', '#new_user')
+    .not(':button, :submit, :reset, :hidden')
+    .val('')
+    .removeAttr('checked')
+    .removeAttr('selected');
+<%- else %>
+  $("#new_user")
+    .replaceWith("<%= escape_javascript(render(:partial => 'form', :locals => { :user => @user })) %>")
+<%- end %>
+

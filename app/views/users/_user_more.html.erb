@@ -1,0 +1,8 @@
+<%- content_tag_for :li, user do %>
+  <h3><%= user.name %> <%= user.surname %></h3>
+  <p><strong>E-mail:</strong> <%= user.email %></p> 
+  <div>
+  <%= link_to "Delete it!", user_path(user), :method => :delete, :remote => true %>
+  <%= link_to "Less", user_path(user, :less => true), :remote => true %>
+  </div>
+<% end %>

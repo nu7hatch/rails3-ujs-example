@@ -1,0 +1,6 @@
+<%= render :partial => "form", :locals => { :user => User.new } %>
+
+<ul id="users">
+  <%= render :partial => "user", :collection => @users %>
+</ul>
+
