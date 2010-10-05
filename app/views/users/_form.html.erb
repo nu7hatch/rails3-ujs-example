@@ -1,12 +1,26 @@
 <%- form_for user, :remote => true, :html => { :id => "new_user" } do |f| %>
   <div class="fields">
-    <%= user.errors.to_yaml %><br />
-    <label for="user_name">Name</label>
-    <%= f.text_field :name %><br />
-    <label for="user_surname">Surname</label>
-    <%= f.text_field :surname %><br />
-    <label for="user_email">E-mail</label>
-    <%= f.text_field :email %><br />
+    
+    <% unless user.errors.empty? %>
+      <ul class="errors">
+        <% user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    <% end %>
+    
+    <p>
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.label :surname %><br />
+      <%= f.text_field :surname %>
+    </p>
+    <p>
+      <%= f.label :email %><br />
+      <%= f.text_field :email %>
+    </p>
   </div>
   <div class="buttons">
     <%= f.submit "Create it!" %>

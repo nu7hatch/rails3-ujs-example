@@ -1,6 +1,9 @@
-<%= render :partial => "form", :locals => { :user => User.new } %>
+<h1>Users list...</h1>
+
+<div id="new_user_form"></div>
 
 <ul id="users">
   <%= render :partial => "user", :collection => @users %>
 </ul>
 
+<%= link_to "Add user", new_user_path, :remote => true, :id => "new_user_link" %>

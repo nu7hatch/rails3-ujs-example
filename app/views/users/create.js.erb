@@ -1,13 +1,7 @@
 <%- if @user.valid? %> 
-  $("#users")
-    .prepend("<%= escape_javascript(render(:partial => 'user', :locals => { :user => @user })) %>")
-  $(':input', '#new_user')
-    .not(':button, :submit, :reset, :hidden')
-    .val('')
-    .removeAttr('checked')
-    .removeAttr('selected');
+  $("#users").prepend("<%= escape_javascript(render(:partial => 'user', :locals => { :user => @user })) %>")
+  $("#new_user").replaceWith("<%= escape_javascript(link_to("Add user", new_user_path, :remote => true, :id => "new_user_link")) %>")
 <%- else %>
-  $("#new_user")
-    .replaceWith("<%= escape_javascript(render(:partial => 'form', :locals => { :user => @user })) %>")
+  $("#new_user").replaceWith("<%= escape_javascript(render(:partial => 'form', :locals => { :user => @user })) %>")
 <%- end %>
 
