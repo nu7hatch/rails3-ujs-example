@@ -10,6 +10,6 @@ Want to run it? It's simple:
   rake db:migrate
   rails server
   
-And then go to <tt>http://localhost:3000/users</tt>.
+..and then go to <tt>http://localhost:3000/users</tt>.
 
 Enjoy!
