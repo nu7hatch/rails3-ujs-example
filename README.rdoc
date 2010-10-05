@@ -5,7 +5,7 @@ within Rails 3.
 
 Want to run it? It's simple:
 
-  git clone git@github.com:nu7hatch/rails3-ujs-example.git
+  git clone git://github.com/nu7hatch/rails3-ujs-example.git
   cd rails3-ujs-example
   rake db:migrate
   rails server
